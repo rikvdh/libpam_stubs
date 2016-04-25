@@ -21,4 +21,8 @@ size_t pamstub_get_pam_get_item_calls();
 void pamstub_set_pam_set_item_retval(int val);
 size_t pamstub_get_pam_set_item_calls(void);
 
+/* pam_get_item.c */
+void pamstub_set_pam_get_user_retval(int val);
+size_t pamstub_get_pam_get_user_calls();
+
 #endif /* __INCLUDE_PAM_STUBS_H__ */

@@ -20,8 +20,12 @@
 static int pamstub_set_data_retval = 0;
 static size_t pamstub_set_data_calls = 0;
 
-int pam_set_data(pam_handle_t *pamh, const char *module_data_name, void *data, void (*cleanup)(pam_handle_t *pamh, void *data, int error_status)) {
-	printf("[pam_set_data] module_data_name: %s\n", module_data_name);
+int pam_set_data(pam_handle_t *pamh, const char *module_data_name, void *data,
+		 void (*cleanup)(pam_handle_t *pamh, void *data, int error_status)) {
+	(void)pamh;
+	(void)module_data_name;
+	(void)data;
+	(void)cleanup;
 	pamstub_set_data_calls++;
 	return -1;
 }

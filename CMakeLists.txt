@@ -63,6 +63,7 @@ set(CFILES
 	src/pam_get_data.c
 	src/pam_set_data.c
 	src/pam_get_item.c
-	src/pam_set_item.c)
+	src/pam_set_item.c
+	src/pam_get_user.c)
 
 add_library(${PROJECT_NAME} SHARED ${CFILES})

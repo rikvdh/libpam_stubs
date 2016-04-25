@@ -21,6 +21,9 @@ static int pamstub_get_item_retval = 0;
 static size_t pamstub_get_item_calls = 0;
 
 int pam_get_item(const pam_handle_t *pamh, int item_type, const void **item) {
+	(void)pamh;
+	(void)item_type;
+	(void)item;
 	pamstub_get_item_calls++;
 	return pamstub_get_item_retval;
 }

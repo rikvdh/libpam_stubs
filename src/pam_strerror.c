@@ -21,6 +21,8 @@ static const char *pamstub_strerror_retval = NULL;
 static size_t pamstub_strerror_calls = 0;
 
 const char *pam_strerror(pam_handle_t *pamh, int errnum) {
+	(void)pamh;
+	(void)errnum;
 	pamstub_strerror_calls++;
 	return pamstub_strerror_retval;
 }

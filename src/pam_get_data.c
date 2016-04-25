@@ -21,7 +21,9 @@ static int pamstub_get_data_retval = 0;
 static size_t pamstub_get_data_calls = 0;
 
 int pam_get_data(const pam_handle_t *pamh, const char *module_data_name, const void **data) {
-	printf("[%s] module_data_name: %s\n", __func__, module_data_name);
+	(void)pamh;
+	(void)module_data_name;
+	(void)data;
 	pamstub_get_data_calls++;
 	return pamstub_get_data_retval;
 }
