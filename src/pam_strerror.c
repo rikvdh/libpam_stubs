@@ -25,9 +25,9 @@ const char *pam_strerror(pam_handle_t *pamh, int errnum) {
 	return pamstub_strerror_retval;
 }
 
-void pamstub_set_strerror_retval(const char *val) {
+void pamstub_set_pam_strerror_retval(const char *val) {
 	pamstub_strerror_retval = val;
 }
-size_t pamstub_get_strerror_calls(void) {
+size_t pamstub_get_pam_strerror_calls(void) {
 	return pamstub_strerror_calls;
 }

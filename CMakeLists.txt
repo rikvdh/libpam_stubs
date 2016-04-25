@@ -61,6 +61,8 @@ include_directories(
 set(CFILES 
 	src/pam_strerror.c
 	src/pam_get_data.c
-	src/pam_set_data.c)
+	src/pam_set_data.c
+	src/pam_get_item.c
+	src/pam_set_item.c)
 
 add_library(${PROJECT_NAME} SHARED ${CFILES})
