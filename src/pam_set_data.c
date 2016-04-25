@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <pam_stubs.h>
 
 #ifdef HAVE_PAM_APPL_H
 #include <pam_appl.h>

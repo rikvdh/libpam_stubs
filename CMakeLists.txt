@@ -52,11 +52,11 @@ check_include_files(pam_appl.h HAVE_PAM_APPL_H)
 check_include_files(security/pam_appl.h HAVE_SECURITY_PAM_APPL_H)
 check_include_files(pam_modules.h HAVE_PAM_MODULES_H)
 check_include_files(security/pam_modules.h HAVE_SECURITY_PAM_MODULES_H)
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/include/config.h)
 
 include_directories(
-	${OPENSSL_INCLUDE_DIR}
-	${CMAKE_CURRENT_BINARY_DIR})
+	${CMAKE_CURRENT_BINARY_DIR}/include
+	${CMAKE_CURRENT_SOURCE_DIR}/include )
 
 set(CFILES 
 	src/pam_strerror.c
