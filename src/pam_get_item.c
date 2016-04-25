@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <pam_stubs.h>
-#include "pam_generic_stubs.h"
 
 #ifdef HAVE_PAM_APPL_H
 #include <pam_appl.h>
@@ -18,6 +16,10 @@
 #include <security/pam_modules.h>
 #endif
 
+#include <pam_stubs.h>
+#include "pam_generic_stubs.h"
+
+SET_CALLBACK(pam_get_item, const pam_handle_t *pamh, int item_type, const void **item);
 SET_RETVAL(pam_get_item, int);
 GET_NCALLS(pam_get_item);
 
@@ -25,6 +27,10 @@ int pam_get_item(const pam_handle_t *pamh, int item_type, const void **item) {
 	(void)pamh;
 	(void)item_type;
 	(void)item;
+	if (_callback) {
+		_callback(pamh, item_type, item);
+		_callback = NULL;
+	}
 	_ncalls++;
 	return _retval;
 }
