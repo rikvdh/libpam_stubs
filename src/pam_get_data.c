@@ -4,6 +4,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <pam_stubs.h>
+#include "pam_generic_stubs.h"
 
 #ifdef HAVE_PAM_APPL_H
 #include <pam_appl.h>
@@ -17,23 +18,13 @@
 #include <security/pam_modules.h>
 #endif
 
-static int pamstub_get_data_retval = 0;
-static size_t pamstub_get_data_calls = 0;
+SET_RETVAL(pam_get_data, int);
+GET_NCALLS(pam_get_data);
 
 int pam_get_data(const pam_handle_t *pamh, const char *module_data_name, const void **data) {
 	(void)pamh;
 	(void)module_data_name;
 	(void)data;
-	pamstub_get_data_calls++;
-	return pamstub_get_data_retval;
-}
-
-void pamstub_set_pam_get_data_retval(int val) {
-	pamstub_get_data_retval = val;
-}
-
-size_t pamstub_get_pam_get_data_calls() {
-	size_t ret = pamstub_get_data_calls;
-	pamstub_get_data_calls = 0;
-	return ret;
+	_ncalls++;
+	return _retval;
 }
