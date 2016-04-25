@@ -1,0 +1,12 @@
+#ifndef __CONFIG_H__
+#define __CONFIG_H__
+
+#define PROJECT_NAME    "@PROJECT_NAME@"
+#define PROJECT_VERSION "@PROJECT_VERSION@"
+
+#cmakedefine HAVE_PAM_APPL_H
+#cmakedefine HAVE_SECURITY_PAM_APPL_H
+#cmakedefine HAVE_PAM_MODULES_H
+#cmakedefine HAVE_SECURITY_PAM_MODULES_H
+
+#endif /* __CONFIG_H__ */
