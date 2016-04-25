@@ -30,9 +30,11 @@ int pam_set_data(pam_handle_t *pamh, const char *module_data_name, void *data,
 	return -1;
 }
 
-void pamstub_set_set_data_retval(int val) {
+void pamstub_set_pam_set_data_retval(int val) {
 	pamstub_set_data_retval = val;
 }
-size_t pamstub_get_set_data_calls(void) {
-	return pamstub_set_data_calls;
+size_t pamstub_get_pam_set_data_calls(void) {
+	size_t ret = pamstub_set_data_calls;
+	pamstub_set_data_calls = 0;
+	return ret;
 }

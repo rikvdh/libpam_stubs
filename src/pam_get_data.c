@@ -33,5 +33,7 @@ void pamstub_set_pam_get_data_retval(int val) {
 }
 
 size_t pamstub_get_pam_get_data_calls() {
-	return pamstub_get_data_calls;
+	size_t ret = pamstub_get_data_calls;
+	pamstub_get_data_calls = 0;
+	return ret;
 }

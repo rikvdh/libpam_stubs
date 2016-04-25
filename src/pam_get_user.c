@@ -32,6 +32,8 @@ void pamstub_set_pam_get_user_retval(int val) {
         pamstub_get_user_retval = val;
 }
 size_t pamstub_get_pam_get_user_calls(void) {
-        return pamstub_get_user_calls;
+        size_t ret = pamstub_get_user_calls;
+        pamstub_get_user_calls = 0;
+        return ret;
 }
 

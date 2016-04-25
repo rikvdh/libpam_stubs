@@ -32,5 +32,7 @@ void pamstub_set_pam_set_item_retval(int val) {
         pamstub_set_item_retval = val;
 }
 size_t pamstub_get_pam_set_item_calls(void) {
-        return pamstub_set_item_calls;
+        size_t ret = pamstub_set_item_calls;
+        pamstub_set_item_calls = 0;
+        return ret;
 }

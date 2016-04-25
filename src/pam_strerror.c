@@ -31,5 +31,7 @@ void pamstub_set_pam_strerror_retval(const char *val) {
 	pamstub_strerror_retval = val;
 }
 size_t pamstub_get_pam_strerror_calls(void) {
-	return pamstub_strerror_calls;
+	size_t ret = pamstub_strerror_calls;
+	pamstub_strerror_calls = 0;
+	return ret;
 }
